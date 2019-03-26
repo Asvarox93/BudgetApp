@@ -1,0 +1,47 @@
+{
+  "name": "budgetapp",
+  "version": "1.0.0",
+  "description": "Aplikacja napisana przy użyciu:\r - HTML5\r - CSS3\r - SCSS\r - JavaScript\r - Gulp",
+  "homepage": "https://github.com/Asvarox93/BudgetApp#readme",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all -p start-css start-js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asvarox93/BudgetApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Asvarox93/BudgetApp/issues"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "del": "^4.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-include": "^2.3.1",
+    "gulp-livereload": "^4.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-require-file": "^1.1.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "imagemin-jpeg-recompress": "^6.0.0",
+    "imagemin-pngquant": "^7.0.0",
+    "jshint": "^2.10.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  }
+}
