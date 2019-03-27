@@ -55,7 +55,7 @@ function scripts(done) {
       })
     )
     .pipe(uglify())
-    .pipe(concat("main.js"))
+    .pipe(concat("index.js"))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(DEST_PATH))
     .pipe(livereload());

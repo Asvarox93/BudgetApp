@@ -28,15 +28,15 @@
         </a>
       </ul>
     </nav>
-    <section class="pulpit">
-      <header class="pulpit__hero">
-        <h2 class="pulpit__tytul">Domowy budżet</h2>
-        <p class="pulpit__podtytul">
+    <section class="budzet">
+      <header class="budzet__hero">
+        <h2 class="budzet__tytul">Domowy budżet</h2>
+        <p class="budzet__podtytul">
           wszystkie przychody i wydatki w jednym miejscu
         </p>
-        <div class="pulpit__budzet">
-          <h2 class="pulpit__tytul pulpit__tytul--srodki">
-            Dostępne środki: <span class="pulpit__srodki"></span> zł
+        <div class="budzet__info">
+          <h2 class="budzet__tytul budzet__tytul--srodki">
+            Dostępne środki: <span class="budzet__srodki"></span> zł
           </h2>
         </div>
       </header>
@@ -58,7 +58,9 @@
             placeholder="Kwota"
             class="kalkulator__pole"
           />
-          <button type="submit"><i class="far fa-check-circle"></i></button>
+          <button type="submit" class="kalkulator__przycisk">
+            <i class="far fa-check-circle"></i>
+          </button>
         </form>
         <section class="dochod">
           <h2 class="dochod__tytul">Dochód</h2>
