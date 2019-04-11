@@ -1,0 +1,100 @@
+// VERIABLES
+$nawigacja-bgc: rgba(0, 0, 0, 0.8);
+$nawigacja-main-color: red;
+$nawigacja-sec-color: #fff;
+$hamburger-bgc: #fff;
+
+// CODE
+.nawigacja {
+  width: 100%;
+  max-width: 26.56rem;
+  height: 100vh;
+  background-color: $nawigacja-bgc;
+  display: block;
+  position: absolute;
+  left: 0;
+  transition: 0.5s ease-in-out;
+
+  &--ukryj {
+    left: -100%;
+    display: hide;
+  }
+
+  &__lista {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    a {
+      color: $nawigacja-sec-color;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 2rem;
+
+      &:hover {
+        color: $nawigacja-main-color;
+      }
+    }
+  }
+
+  @media screen and (min-width: 426px) {
+    &__lista {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+
+      a {
+        color: $nawigacja-sec-color;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 2rem;
+
+        &:hover {
+          color: $nawigacja-main-color;
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  background-color: $hamburger-bgc;
+  z-index: 9999;
+
+  &__przycisk {
+    width: 3rem;
+    height: 3rem;
+    font-size: 2em;
+
+    transition: 0.5s ease-in-out;
+    &::before {
+      content: "\2630";
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--aktywny {
+      color: $nawigacja-main-color;
+      transform: rotate(90deg);
+      transition: 0.5s ease-in-out;
+    }
+  }
+
+  @media screen and (min-width: 426px) {
+    position: absolute;
+    background: none;
+  }
+}
