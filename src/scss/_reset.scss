@@ -145,3 +145,8 @@ button {
   border: 0;
   cursor: pointer;
 }
+
+*:focus {
+  outline: solid 2px;
+  outline-color: rgb(77, 144, 254);
+}

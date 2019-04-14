@@ -1,0 +1,154 @@
+// VERIABLES
+$formularz-bgc: #ededed;
+$formularz-pole-border: 1px solid hsl(0, 1%, 79%);
+$formularz-pole-color: #757587;
+$formularz-placeholder-color: #cac9c9;
+$formularz-dodaj-color: green;
+$formularz-dodajHover-color: lighten(green, 15%);
+$formularz-usun-color: red;
+$formularz-usunHover-color: darken(red, 15%);
+
+// CODE
+.kalkulator {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  &__formularz {
+    width: 100%;
+    background-color: $formularz-bgc;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 768px) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__pole {
+    width: 100%;
+    margin: 0.2rem;
+    padding: 0.4rem;
+    border-radius: 0.4em;
+    border: $formularz-pole-border;
+
+    &:first-child {
+      color: $formularz-pole-color;
+      height: 1.86rem;
+    }
+
+    &::placeholder {
+      font-style: $formularz-placeholder-color;
+    }
+
+    @media screen and (min-width: 768px) {
+      max-width: calc(50% / 3);
+      &:first-child {
+        width: 6rem;
+      }
+
+      &:nth-child(3) {
+        width: 4rem;
+        text-align: center;
+      }
+    }
+  }
+
+  &__przycisk {
+    font-size: 2em;
+    margin: 0 1rem;
+
+    @media screen and (min-width: 768px) {
+      margin: 0 0.2rem;
+    }
+
+    &--dodaj {
+      color: $formularz-dodaj-color;
+
+      &:hover {
+        color: $formularz-dodajHover-color;
+      }
+    }
+
+    &--usun {
+      color: $formularz-usun-color;
+      &:hover {
+        color: $formularz-usunHover-color;
+      }
+    }
+  }
+}
+
+.dochod,
+.wydatki {
+  width: 100%;
+  margin: 0.4rem;
+
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 4rem);
+    max-width: 40vw;
+    margin: 0.4rem 2rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 30vw;
+  }
+
+  &__tytul {
+    text-align: center;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  &__lista {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.dochod__tytul {
+  background-color: rgb(6, 194, 6);
+}
+
+.wydatki__tytul {
+  background-color: rgb(240, 6, 6);
+}
+
+.element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+  border: 1px solid #cac9c9;
+
+  &__usun {
+    color: red;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: inherit 0.2rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    &__usun {
+      display: none;
+    }
+  }
+
+  &:hover {
+    .element__usun {
+      display: inline;
+      cursor: pointer;
+    }
+  }
+}
