@@ -16,6 +16,26 @@ $formularz-usunHover-color: darken(red, 15%);
   justify-content: center;
   width: 100%;
 
+  &__bledy {
+    width: 100%;
+    text-align: center;
+
+    background-color: #f8d7da;
+    color: #721c24;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.5s, opacity 0.2s, padding 1s;
+    height: 0;
+  }
+  &__bledy--aktywny {
+    padding: 1rem 0;
+    height: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s linear;
+    border: 1px solid #f18893;
+  }
+
   &__formularz {
     width: 100%;
     background-color: $formularz-bgc;

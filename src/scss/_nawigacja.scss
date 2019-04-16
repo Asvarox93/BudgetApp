@@ -12,11 +12,12 @@ $hamburger-bgc: #fff;
   background-color: $nawigacja-bgc;
   display: block;
   position: absolute;
+  opacity: 1;
   left: 0;
-  transition: 0.5s ease-in-out;
+  transition: 0.2s ease-in-out;
 
   &--ukryj {
-    left: -100%;
+    opacity: 0;
     display: hide;
   }
 
