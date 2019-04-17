@@ -127,31 +127,74 @@ $formularz-usunHover-color: darken(red, 15%);
     padding: 0.5rem;
     border-radius: 0.4rem;
     margin-bottom: 0.5rem;
+    display: flex;
+    white-space: nowrap;
   }
+
+  &__nazwa {
+    flex: 10;
+  }
+
+  &__srodki {
+    font-size: 0.8em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.2rem;
+    text-transform: none;
+    flex: 1;
+  }
+
   &__lista {
     display: flex;
     flex-direction: column;
   }
 }
+.dochod {
+  &__tytul {
+    background-color: rgb(6, 194, 6);
+  }
 
-.dochod__tytul {
-  background-color: rgb(6, 194, 6);
+  &__srodki {
+    background-color: lighten(rgb(6, 194, 6), 20%);
+  }
 }
 
-.wydatki__tytul {
-  background-color: rgb(240, 6, 6);
+.wydatki {
+  &__tytul {
+    background-color: rgb(240, 6, 6);
+  }
+
+  &__srodki {
+    background-color: lighten(rgb(240, 6, 6), 20%);
+  }
+
+  &__procent {
+    font-size: 0.8em;
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.2rem;
+    border-radius: 0.2rem;
+    background-color: lighten(rgb(240, 6, 6), 20%);
+    flex: 1;
+  }
 }
 
 .element {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 1rem;
   padding: 0.5rem;
   margin-bottom: 0.2rem;
   border: 1px solid #cac9c9;
 
+  &__opis {
+    flex: 10;
+  }
+  &__kwota {
+    flex: 1;
+    white-space: nowrap;
+  }
   &__usun {
+    padding-left: 0.5rem;
     color: red;
   }
 

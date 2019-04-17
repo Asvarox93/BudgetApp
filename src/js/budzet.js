@@ -29,6 +29,7 @@ const dodajBudzet = e => {
 };
 
 const sprawdzDane = dane => {
+  // TODO: Stworzyć lepszą weryfikację wprowadzanch danych!
   let errors = "";
 
   Object.keys(dane).forEach(e => {
@@ -45,7 +46,17 @@ const sprawdzDane = dane => {
 };
 
 const dodajElementDoBudzetu = dane => {
-  //TODO: sprawdzenie czy wydatek, czy dochod a nastepnie dodanie do html.
+  const temp = getTemplateHtml(dane.rodzaj);
+  temp.content.querySelector(".element__opis").innerHTML = dane.nazwa;
+  temp.content.querySelector(".element__kwota").innerHTML = `${dane.kwota} zł`;
+
+  document.querySelector(`.${dane.rodzaj}__lista`).appendChild(temp.content);
+};
+
+const getTemplateHtml = rodzaj => {
+  const temp = document.querySelector(`#${rodzaj}__template`);
+  const clone = temp.cloneNode(true);
+  return clone;
 };
 
 document

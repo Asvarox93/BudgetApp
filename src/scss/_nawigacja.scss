@@ -14,11 +14,11 @@ $hamburger-bgc: #fff;
   position: absolute;
   opacity: 1;
   left: 0;
-  transition: 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &--ukryj {
     opacity: 0;
-    display: hide;
+    display: none;
   }
 
   &__lista {
