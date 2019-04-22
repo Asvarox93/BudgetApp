@@ -37,7 +37,7 @@
         </p>
         <div class="budzet__info">
           <h2 class="budzet__tytul budzet__tytul--srodki">
-            Dostępne środki: <span class="budzet__srodki">+11 320 zł</span>
+            Dostępne środki: <span class="budzet__srodki">0 zł</span>
           </h2>
         </div>
       </header>
@@ -67,7 +67,7 @@
             <i class="far fa-window-close"></i>
           </button>
           <button
-            type="submit"
+            type="button"
             class="kalkulator__przycisk kalkulator__przycisk--dodaj"
           >
             <i class="far fa-check-circle"></i>
@@ -80,7 +80,7 @@
           </div>
           <ul class="dochod__lista">
             <template id="dochod__template">
-              <li class="element element--dochod">
+              <li data-type="dochod" class="element element--dochod">
                 <div class="element__opis"></div>
                 <div class="element__kwota"></div>
                 <div class="element__usun">
@@ -98,7 +98,7 @@
           </div>
           <ul class="wydatki__lista">
             <template id="wydatki__template">
-              <li class="element element--wydatki">
+              <li data-type="wydatki" class="element element--wydatki">
                 <div class="element__opis"></div>
                 <div class="element__kwota"></div>
                 <div class="element__usun">

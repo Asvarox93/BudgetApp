@@ -10,7 +10,7 @@ $hamburger-bgc: #fff;
   max-width: 26.56rem;
   height: 100vh;
   background-color: $nawigacja-bgc;
-  display: block;
+  visibility: visible;
   position: absolute;
   opacity: 1;
   left: 0;
@@ -18,7 +18,8 @@ $hamburger-bgc: #fff;
 
   &--ukryj {
     opacity: 0;
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   &__lista {
