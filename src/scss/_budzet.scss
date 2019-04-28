@@ -7,6 +7,9 @@ $hero-srodki-border: 1px solid rgba(255, 255, 255, 0.6);
 
 // CODE
 .budzet {
+  &__ukryj {
+    display: none;
+  }
   &__hero {
     height: 40vh;
     width: 100%;

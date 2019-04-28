@@ -21,10 +21,10 @@
 
     <nav class="nawigacja nawigacja--ukryj">
       <ul class="nawigacja__lista">
-        <a href="/">
+        <a data-link="budzet" href="#">
           <li class="nawigacja__element">Domowy budżet</li>
         </a>
-        <a href="/todo">
+        <a data-link="todo" href="#todo">
           <li class="nawigacja__element">Lista zadań</li>
         </a>
       </ul>
@@ -108,6 +108,75 @@
             </template>
           </ul>
         </section>
+      </main>
+    </section>
+    <!-- Lista TODO -->
+    <section class="todo">
+      <h2 class="todo__tytul">Lista zadań ToDo</h2>
+      <main class="todo__listy">
+        <div class="todo__kolumna">
+          <h2 class="todo__tytul todo__tytul--kolumna">Dzisiaj</h2>
+          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <ul class="todo__lista">
+            <template id="todo__template">
+              <li class="todo__element">
+                <p class="todo__opis"></p>
+                <div class="todo__usun">
+                  <i class="far fa-times-circle"></i>
+                </div>
+              </li>
+            </template>
+          </ul>
+        </div>
+        <div class="todo__kolumna">
+          <h2 class="todo__tytul todo__tytul--kolumna">Jutro</h2>
+          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <ul class="todo__lista">
+            <!-- <template id="todo__template"> -->
+            <li class="todo__element">
+              <p class="todo__opis">test</p>
+              <div class="todo__usun">
+                <i class="far fa-times-circle"></i>
+              </div>
+            </li>
+            <li class="todo__element">
+              <p class="todo__opis">test</p>
+              <div class="todo__usun">
+                <i class="far fa-times-circle"></i>
+              </div>
+            </li>
+
+            <!-- </template> -->
+          </ul>
+        </div>
+        <div class="todo__kolumna">
+          <h2 class="todo__tytul todo__tytul--kolumna">Nadchodzące</h2>
+          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <ul class="todo__lista">
+            <template id="todo__template">
+              <li class="todo__element">
+                <p class="todo__opis"></p>
+                <div class="todo__usun">
+                  <i class="far fa-times-circle"></i>
+                </div>
+              </li>
+            </template>
+          </ul>
+        </div>
+        <div class="todo__kolumna">
+          <h2 class="todo__tytul todo__tytul--kolumna">Kiedyś</h2>
+          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <ul class="todo__lista">
+            <template id="todo__template">
+              <li class="todo__element">
+                <p class="todo__opis"></p>
+                <div class="todo__usun">
+                  <i class="far fa-times-circle"></i>
+                </div>
+              </li>
+            </template>
+          </ul>
+        </div>
       </main>
     </section>
   </body>

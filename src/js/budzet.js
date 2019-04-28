@@ -1,6 +1,9 @@
 // Dodawanie budzetu
+/* Budzet tylko na pokaz, gdybym chciał aby aplikacja funkcjonowała z bazą danych to
+ przechowywałbym opis, kwote i typ w tzw. object array i co aktualizacje wysyłał do bazy danych,
+ a przy uruchomieniu w funkcji inicjalizacja załadowałbym dane z bazy. */
 
-const budgetController = (() => {
+const budzetKontroler = (() => {
   let dochodLista = [0];
   let wydatkiLista = [0];
   let saldo = 0;
@@ -64,7 +67,7 @@ const budgetController = (() => {
   };
 })();
 
-const uiController = (() => {
+const uiKontroler = (() => {
   const getTemplateHtml = rodzaj => {
     const temp = document.querySelector(`#${rodzaj}__template`);
     const clone = temp.cloneNode(true);
@@ -109,10 +112,8 @@ const uiController = (() => {
   };
 })();
 
-const appController = ((budget, ui) => {
+const appKontroler = ((budget, ui) => {
   const dodajBudzet = () => {
-    // e.preventDefault();
-
     const dane = {
       rodzaj: document.querySelector('[name="rodzaj"]').value,
       nazwa: document.querySelector('[name="nazwa"]').value,
@@ -150,7 +151,7 @@ const appController = ((budget, ui) => {
         errors += `Wprowadz minimum 3 znaki w polu ${e} <br>`;
       } else if (
         (e === "kwota" && (isNaN(parseFloat(dane[e])) && !isFinite(dane[e]))) ||
-        String(dane[e]).includes("-")
+        (e === "kwota" && String(dane[e]).includes("-"))
       ) {
         errors += `Wprowadz poprawne dane w polu ${e} (tylko liczby) <br>`;
       }
@@ -176,6 +177,6 @@ const appController = ((budget, ui) => {
       });
     }
   };
-})(budgetController, uiController);
+})(budzetKontroler, uiKontroler);
 
-appController.inicjalizacja();
+appKontroler.inicjalizacja();

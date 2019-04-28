@@ -1,0 +1,120 @@
+// VERIABLES
+$todo-tytul-color: rgb(5, 182, 226);
+// CODE
+.todo {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  &__pokaz {
+    display: flex;
+  }
+
+  &__tytul {
+    font-size: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    color: $todo-tytul-color;
+    padding: 0.8rem 0 0.8rem 1rem;
+    text-transform: uppercase;
+
+    &--kolumna {
+      padding-left: 0;
+      position: relative;
+      padding-left: 1rem;
+      color: #fff;
+      background-color: $todo-tytul-color;
+
+      &:after {
+        content: "";
+        width: 110%;
+        height: 100%;
+        border-bottom: 1px solid hsl(0, 1%, 79%);
+        position: absolute;
+        left: -1rem;
+        bottom: 0;
+      }
+      @media screen and (min-width: 768px) {
+        padding-left: none;
+      }
+    }
+  }
+
+  &__listy {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+
+  &__kolumna {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    overflow-x: hidden;
+
+    @media screen and (min-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  &__dodaj {
+    margin: 0.5rem;
+    padding: 1rem;
+    border: 1px solid hsl(0, 1%, 79%);
+    border-radius: 0.3rem;
+    position: relative;
+
+    &:hover {
+      color: rgb(5, 182, 226);
+    }
+
+    &:after {
+      content: "";
+      width: 120%;
+      height: 100%;
+      border-bottom: 1px solid hsl(0, 1%, 79%);
+      position: absolute;
+      left: -2rem;
+      bottom: -0.6rem;
+    }
+  }
+
+  &__usun {
+    display: none;
+    color: #000;
+    position: absolute;
+    right: 0.5rem;
+
+    &:hover {
+      color: red;
+    }
+  }
+
+  &__element {
+    margin: 0.5rem;
+    padding: 0.5rem 0.5rem;
+    border: 1px solid hsl(0, 1%, 79%);
+    border-radius: 0.3rem;
+    width: calc(100% - 1rem);
+    box-sizing: border-box;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    &:hover {
+      .todo__usun {
+        display: inline-block;
+      }
+    }
+  }
+}
