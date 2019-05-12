@@ -7,6 +7,13 @@ $formularz-dodaj-color: green;
 $formularz-dodajHover-color: lighten(green, 15%);
 $formularz-usun-color: red;
 $formularz-usunHover-color: darken(red, 15%);
+$formularz-bledy-bgc: #f8d7da;
+$formularz-bledy-color: #721c24;
+$formularz-bledy-border: 1px solid #f18893;
+$element-border: 1px solid #cac9c9;
+$element-przyciskUsun-color: red;
+$wydatki-bgc: rgb(240, 6, 6);
+$dochod-bgc: rgb(6, 194, 6);
 
 // CODE
 .kalkulator {
@@ -20,8 +27,8 @@ $formularz-usunHover-color: darken(red, 15%);
     width: 100%;
     text-align: center;
 
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: $formularz-bledy-bgc;
+    color: $formularz-bledy-color;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.5s, opacity 0.2s, padding 1s;
@@ -33,7 +40,7 @@ $formularz-usunHover-color: darken(red, 15%);
     visibility: visible;
     opacity: 1;
     transition: all 0.5s linear;
-    border: 1px solid #f18893;
+    border: $formularz-bledy-border;
   }
 
   &__formularz {
@@ -150,21 +157,21 @@ $formularz-usunHover-color: darken(red, 15%);
 }
 .dochod {
   &__tytul {
-    background-color: rgb(6, 194, 6);
+    background-color: $dochod-bgc;
   }
 
   &__srodki {
-    background-color: lighten(rgb(6, 194, 6), 20%);
+    background-color: lighten($dochod-bgc, 20%);
   }
 }
 
 .wydatki {
   &__tytul {
-    background-color: rgb(240, 6, 6);
+    background-color: $wydatki-bgc;
   }
 
   &__srodki {
-    background-color: lighten(rgb(240, 6, 6), 20%);
+    background-color: lighten($wydatki-bgc, 20%);
   }
 
   &__procent {
@@ -172,7 +179,7 @@ $formularz-usunHover-color: darken(red, 15%);
     padding: 0.2rem 0.5rem;
     margin-left: 0.2rem;
     border-radius: 0.2rem;
-    background-color: lighten(rgb(240, 6, 6), 20%);
+    background-color: lighten($wydatki-bgc, 20%);
     flex: 1;
   }
 }
@@ -184,7 +191,7 @@ $formularz-usunHover-color: darken(red, 15%);
   height: 1rem;
   padding: 0.5rem;
   margin-bottom: 0.2rem;
-  border: 1px solid #cac9c9;
+  border: $element-border;
 
   &__opis {
     flex: 10;
@@ -195,7 +202,7 @@ $formularz-usunHover-color: darken(red, 15%);
   }
   &__usun {
     padding-left: 0.5rem;
-    color: red;
+    color: $element-przyciskUsun-color;
   }
 
   @media screen and (min-width: 768px) {

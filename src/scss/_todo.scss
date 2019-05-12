@@ -1,5 +1,14 @@
 // VERIABLES
-$todo-tytul-color: rgb(5, 182, 226);
+$todo-color: rgb(6, 194, 6);
+$todo-kolumna-color: #fff;
+$todo-kolumnaAfter-border: 1px solid hsl(0, 1%, 79%);
+$todo-przyciskDodaj-border: 1px solid hsl(0, 1%, 79%);
+$todo-input-border: 1px solid hsl(0, 1%, 79%);
+$todo-przyciskUsun-color: #000;
+$todo-przyciskUsunHover-color: rgb(255, 0, 0);
+$todo-element-border: 1px solid hsl(0, 1%, 79%);
+$todo-SkreslonyElement-decoration: rgb(121, 120, 120) line-through;
+$todo-SkreslonyElement-color: rgb(94, 85, 85);
 // CODE
 .todo {
   display: none;
@@ -15,7 +24,7 @@ $todo-tytul-color: rgb(5, 182, 226);
     font-size: 1.5rem;
     width: 100%;
     box-sizing: border-box;
-    color: $todo-tytul-color;
+    color: $todo-color;
     padding: 0.8rem 0 0.8rem 1rem;
     text-transform: uppercase;
 
@@ -23,14 +32,14 @@ $todo-tytul-color: rgb(5, 182, 226);
       padding-left: 0;
       position: relative;
       padding-left: 1rem;
-      color: #fff;
-      background-color: $todo-tytul-color;
+      color: $todo-kolumna-color;
+      background-color: $todo-color;
 
       &:after {
         content: "";
         width: 110%;
         height: 100%;
-        border-bottom: 1px solid hsl(0, 1%, 79%);
+        border-bottom: $todo-kolumnaAfter-border;
         position: absolute;
         left: -1rem;
         bottom: 0;
@@ -67,40 +76,66 @@ $todo-tytul-color: rgb(5, 182, 226);
   &__dodaj {
     margin: 0.5rem;
     padding: 1rem;
-    border: 1px solid hsl(0, 1%, 79%);
+    border: $todo-przyciskDodaj-border;
     border-radius: 0.3rem;
     position: relative;
 
     &:hover {
-      color: rgb(5, 182, 226);
+      color: $todo-color;
     }
 
     &:after {
       content: "";
       width: 120%;
       height: 100%;
-      border-bottom: 1px solid hsl(0, 1%, 79%);
+      border-bottom: $todo-przyciskDodaj-border;
       position: absolute;
       left: -2rem;
       bottom: -0.6rem;
     }
   }
 
+  &__input {
+    margin: 0.5rem;
+    padding: 0.2rem 0.1rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    border: $todo-input-border;
+    outline: none;
+    display: none;
+
+    &:focus {
+      border-color: $todo-color;
+    }
+
+    &--pokaz {
+      display: inline;
+    }
+  }
+
+  &__opis {
+    width: inherit;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
+    pointer-events: none;
+  }
+
   &__usun {
     display: none;
-    color: #000;
+    color: $todo-przyciskUsun-color;
     position: absolute;
     right: 0.5rem;
 
     &:hover {
-      color: red;
+      color: $todo-przyciskUsunHover-color;
     }
   }
 
   &__element {
     margin: 0.5rem;
     padding: 0.5rem 0.5rem;
-    border: 1px solid hsl(0, 1%, 79%);
+    border: $todo-element-border;
     border-radius: 0.3rem;
     width: calc(100% - 1rem);
     box-sizing: border-box;
@@ -115,6 +150,11 @@ $todo-tytul-color: rgb(5, 182, 226);
       .todo__usun {
         display: inline-block;
       }
+    }
+
+    &--skreslony {
+      text-decoration: $todo-SkreslonyElement-decoration;
+      color: $todo-SkreslonyElement-color;
     }
   }
 }

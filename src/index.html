@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Kalkulator budżetu domowego</title>
+    <link rel="icon" href="favicon.gif" type="image/ico" />
+    <link rel="shortcut icon" href="favicon.gif" type="image/x-icon" />
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link
       rel="stylesheet"
@@ -115,10 +117,15 @@
       <h2 class="todo__tytul">Lista zadań ToDo</h2>
       <main class="todo__listy">
         <div class="todo__kolumna">
-          <h2 class="todo__tytul todo__tytul--kolumna">Dzisiaj</h2>
-          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <h2 class="todo__tytul todo__tytul--kolumna">
+            Dzisiaj
+          </h2>
+          <button data-type="dzisiaj" class="todo__dodaj">
+            <i class="fas fa-plus"></i>
+          </button>
+          <input type="text" name="opis" class="todo__input" />
           <ul class="todo__lista">
-            <template id="todo__template">
+            <template data-template="dzisiaj" id="todo__template">
               <li class="todo__element">
                 <p class="todo__opis"></p>
                 <div class="todo__usun">
@@ -130,30 +137,29 @@
         </div>
         <div class="todo__kolumna">
           <h2 class="todo__tytul todo__tytul--kolumna">Jutro</h2>
-          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <button data-type="jutro" class="todo__dodaj">
+            <i class="fas fa-plus"></i>
+          </button>
+          <input type="text" name="opis" class="todo__input" />
           <ul class="todo__lista">
-            <!-- <template id="todo__template"> -->
-            <li class="todo__element">
-              <p class="todo__opis">test</p>
-              <div class="todo__usun">
-                <i class="far fa-times-circle"></i>
-              </div>
-            </li>
-            <li class="todo__element">
-              <p class="todo__opis">test</p>
-              <div class="todo__usun">
-                <i class="far fa-times-circle"></i>
-              </div>
-            </li>
-
-            <!-- </template> -->
+            <template data-template="jutro" id="todo__template">
+              <li class="todo__element">
+                <p class="todo__opis"></p>
+                <div class="todo__usun">
+                  <i class="far fa-times-circle"></i>
+                </div>
+              </li>
+            </template>
           </ul>
         </div>
         <div class="todo__kolumna">
           <h2 class="todo__tytul todo__tytul--kolumna">Nadchodzące</h2>
-          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <button data-type="nadchodzace" class="todo__dodaj">
+            <i class="fas fa-plus"></i>
+          </button>
+          <input type="text" name="opis" class="todo__input" />
           <ul class="todo__lista">
-            <template id="todo__template">
+            <template data-template="nadchodzace" id="todo__template">
               <li class="todo__element">
                 <p class="todo__opis"></p>
                 <div class="todo__usun">
@@ -165,9 +171,12 @@
         </div>
         <div class="todo__kolumna">
           <h2 class="todo__tytul todo__tytul--kolumna">Kiedyś</h2>
-          <button class="todo__dodaj"><i class="fas fa-plus"></i></button>
+          <button data-type="kiedys" class="todo__dodaj">
+            <i class="fas fa-plus"></i>
+          </button>
+          <input type="text" name="opis" class="todo__input" />
           <ul class="todo__lista">
-            <template id="todo__template">
+            <template data-template="kiedys" id="todo__template">
               <li class="todo__element">
                 <p class="todo__opis"></p>
                 <div class="todo__usun">

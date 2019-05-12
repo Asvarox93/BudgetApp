@@ -35,8 +35,8 @@ const budzetKontroler = (() => {
       aktualizujBudzet();
     },
     usunElementZBudzetu: e => {
-      const rodzaj = e.parentNode.parentNode.dataset.type;
-      const kwota = e.parentNode.previousElementSibling.innerHTML
+      const rodzaj = e.parentNode.dataset.type;
+      const kwota = e.previousElementSibling.innerHTML
         .match(/\d+/g)
         .map(Number);
 
@@ -68,7 +68,7 @@ const budzetKontroler = (() => {
 })();
 
 const uiKontroler = (() => {
-  const getTemplateHtml = rodzaj => {
+  const znajdzTemplatke = rodzaj => {
     const temp = document.querySelector(`#${rodzaj}__template`);
     const clone = temp.cloneNode(true);
     return clone;
@@ -87,7 +87,7 @@ const uiKontroler = (() => {
     },
 
     dodajElementBudzetuDoUI: dane => {
-      const temp = getTemplateHtml(dane.rodzaj);
+      const temp = znajdzTemplatke(dane.rodzaj);
 
       temp.content.querySelector(".element__opis").innerHTML = dane.nazwa;
       temp.content.querySelector(".element__kwota").innerHTML = `${
@@ -134,7 +134,7 @@ const appKontroler = ((budget, ui) => {
   const usunElementZBudzetu = e => {
     budget.usunElementZBudzetu(e);
     ui.aktualizujBudzetUI(budget.pobierzDaneBudzetu());
-    e.parentNode.parentNode.remove();
+    e.parentNode.remove();
   };
 
   const sprawdzDane = dane => {
@@ -168,13 +168,18 @@ const appKontroler = ((budget, ui) => {
   return {
     inicjalizacja: () => {
       document.querySelector("body").addEventListener("click", e => {
-        if (e.target.className === "far fa-check-circle") {
+        if (
+          e.target.className ===
+          "kalkulator__przycisk kalkulator__przycisk--dodaj"
+        ) {
           dodajBudzet();
         }
-        if (e.target.className === "far fa-times-circle") {
+        if (e.target.className === "element__usun") {
           usunElementZBudzetu(e.target);
         }
       });
+
+      return;
     }
   };
 })(budzetKontroler, uiKontroler);

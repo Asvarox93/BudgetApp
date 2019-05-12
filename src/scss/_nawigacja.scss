@@ -1,9 +1,10 @@
 // VERIABLES
 $nawigacja-bgc: rgba(0, 0, 0, 0.8);
-$nawigacja-main-color: rgb(6, 194, 6);
+$nawigacja-main-color: rgb(255, 0, 0);
 $nawigacja-sec-color: #fff;
+$nawigacja-aktywny-color: rgb(6, 194, 6);
 $hamburger-bgc: #fff;
-$hamburger-Todo-bgc: rgb(5, 182, 226);
+$hamburger-todo-bgc: rgb(6, 194, 6);
 // CODE
 .nawigacja {
   width: 100%;
@@ -26,7 +27,7 @@ $hamburger-Todo-bgc: rgb(5, 182, 226);
     outline: none;
   }
   &__aktywny &__element {
-    color: rgb(6, 194, 6);
+    color: $nawigacja-aktywny-color;
   }
 
   &__element {
@@ -95,7 +96,7 @@ $hamburger-Todo-bgc: rgb(5, 182, 226);
     font-size: 2em;
     color: $hamburger-bgc;
     &--todo {
-      color: $hamburger-Todo-bgc;
+      color: $hamburger-todo-bgc;
     }
 
     transition: 0.5s ease-in-out;
