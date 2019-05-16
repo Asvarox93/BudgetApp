@@ -99,6 +99,7 @@ $todo-SkreslonyElement-color: rgb(94, 85, 85);
     margin: 0.5rem;
     padding: 0.2rem 0.1rem;
     border-radius: 0.3rem;
+    font-size: 1rem;
     text-decoration: none;
     border: $todo-input-border;
     outline: none;
@@ -122,13 +123,16 @@ $todo-SkreslonyElement-color: rgb(94, 85, 85);
   }
 
   &__usun {
-    display: none;
     color: $todo-przyciskUsun-color;
     position: absolute;
     right: 0.5rem;
+    cursor: pointer;
 
     &:hover {
       color: $todo-przyciskUsunHover-color;
+    }
+    @media screen and (min-width: 1024px) {
+      display: none;
     }
   }
 

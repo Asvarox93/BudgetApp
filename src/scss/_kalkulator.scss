@@ -63,6 +63,7 @@ $dochod-bgc: rgb(6, 194, 6);
     margin: 0.2rem;
     padding: 0.4rem;
     border-radius: 0.4em;
+    font-size: 1rem;
     border: $formularz-pole-border;
 
     &:first-child {
@@ -188,13 +189,15 @@ $dochod-bgc: rgb(6, 194, 6);
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  height: 1rem;
   padding: 0.5rem;
   margin-bottom: 0.2rem;
   border: $element-border;
 
   &__opis {
     flex: 10;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: pre-wrap;
   }
   &__kwota {
     flex: 1;
@@ -202,6 +205,7 @@ $dochod-bgc: rgb(6, 194, 6);
   }
   &__usun {
     padding-left: 0.5rem;
+    cursor: pointer;
     color: $element-przyciskUsun-color;
   }
 
@@ -218,7 +222,6 @@ $dochod-bgc: rgb(6, 194, 6);
   &:hover {
     .element__usun {
       display: inline;
-      cursor: pointer;
     }
   }
 }
